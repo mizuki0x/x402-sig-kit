@@ -1,0 +1,71 @@
+{
+  "name": "x402-sig-kit",
+  "version": "0.1.0",
+  "description": "Signature verification toolkit for x402-style payments: ERC-1271/ERC-6492 smart wallets on EVM, agentic program payers on SVM. Unofficial.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mizuki0x/x402-sig-kit.git"
+  },
+  "homepage": "https://github.com/mizuki0x/x402-sig-kit#readme",
+  "bugs": {
+    "url": "https://github.com/mizuki0x/x402-sig-kit/issues"
+  },
+  "keywords": [
+    "x402",
+    "eip-1271",
+    "erc-1271",
+    "erc-6492",
+    "signatures",
+    "smart-wallet",
+    "solana",
+    "ai-agents",
+    "payments"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "NOTICE"
+  ],
+  "exports": {
+    "./evm": {
+      "types": "./dist/evm/index.d.ts",
+      "default": "./dist/evm/index.js"
+    },
+    "./svm": {
+      "types": "./dist/svm/index.d.ts",
+      "default": "./dist/svm/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prepare": "npm run build"
+  },
+  "peerDependencies": {
+    "@solana/kit": ">=2.0.0",
+    "viem": "^2.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@solana/kit": {
+      "optional": true
+    },
+    "viem": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@solana-program/token": "^0.13.0",
+    "@solana-program/token-2022": "^0.11.0",
+    "@solana/kit": "^6.9.0",
+    "@types/node": "^24.0.0",
+    "typescript": "^5.7.0",
+    "viem": "^2.52.2",
+    "vitest": "^4.1.8"
+  }
+}
